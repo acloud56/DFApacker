@@ -36,13 +36,7 @@
       "password": "{{user `vsphere_password`}}",
       "storage": [{
                 "disk_size": "61440",
-                "disk_thin_provisioned":true},
-                        {
-                "disk_size": 40960,
-                "disk_thin_provisioned":true}, 
-                        {
-                 "disk_size": 20480,
-                 "disk_thin_provisioned":true}],
+                "disk_thin_provisioned":true}],
     
       "type": "vsphere-iso",
       "username": "{{user `vsphere_user`}}",
