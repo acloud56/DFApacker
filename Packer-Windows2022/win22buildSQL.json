@@ -36,34 +36,7 @@
       "password": "{{user `vsphere_password`}}",
       "storage": [{
                 "disk_size": "61440",
-                "disk_thin_provisioned":true},
-                        {
-                "disk_size": 40960,
-                "disk_thin_provisioned":true}, 
-                        {
-                 "disk_size": 30720,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 1024,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 1024,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 1024,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 51200,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 40960,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 20480,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 102400,
-                 "disk_thin_provisioned":true}],
+                "disk_thin_provisioned":true}],
       "type": "vsphere-iso",
       "username": "{{user `vsphere_user`}}",
       "vcenter_server": "{{user `vsphere_server`}}",
@@ -76,10 +49,6 @@
      {
         "type": "powershell",
         "scripts": ["setup/moveCDrom.ps1"]
-      },
-     {
-        "type": "powershell",
-        "scripts": ["setup/dismountSQL.ps1"]
       },
     {
       "inline": [
