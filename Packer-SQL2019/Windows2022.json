@@ -1,0 +1,86 @@
+{
+  "builders": [
+    {
+        "type": "vsphere-iso",
+  
+        "vcenter_server": "{{user `vsphere-server`}}",
+        "username": "{{user `vsphere-user`}}",
+        "password": "{{user `vsphere-password`}}",
+        "insecure_connection": "true",
+  
+        "cluster": "{{user `vsphere-cluster`}}",
+        "datastore": "{{user `vsphere-datastore`}}",
+        "folder": "{{user `vsphere-folder`}}",
+        "datacenter": "{{user `datacenter`}}",
+  
+        "communicator": "winrm",
+        "winrm_username": "Administrator",
+        "winrm_password": "{{user `winadmin-password`}}",
+        "winrm_timeout": "5m",
+  
+        "convert_to_template": "true",
+      
+        "content_library_destination" : {
+          "library": "vRA Template Images"
+           },
+
+        "vm_name": "{{user `vm-name`}}",
+        "guest_os_type": "windows9Server64Guest",
+        "remove_cdrom": "true",
+  
+        "CPUs": "{{user `vm-cpu-num`}}",
+        "RAM": "{{user `vm-mem-size`}}",
+        "RAM_reserve_all": true,
+        "firmware": "bios",
+         "configuration_parameters": [{
+                "disk.EnableUUID": "True"}
+         ],
+  
+        "storage": [{
+                "disk_size": "61440",
+                "disk_thin_provisioned":true},
+                        {
+                "disk_size": "40960",
+                "disk_thin_provisioned":true}
+                       ],
+        "disk_controller_type": "lsilogic-sas",
+          
+        "network_adapters": [
+          {
+            "network": "{{user `vsphere-network`}}",
+            "network_card": "vmxnet3"
+          }
+        ],
+
+        "shutdown_command": "shutdown /s /t 5 /f /d p:4:1 /c \"Packer Shutdown\"",
+  
+        "iso_checksum": "4f1457c4fe14ce48c9b2324924f33ca4f0470475e6da851b39ccbf98f44e7852",
+        "iso_url": "https://software-download.microsoft.com/download/sg/20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso",
+  
+        "floppy_files": [
+            "autounattend.xml",
+            "scripts/disable-network-discovery.cmd",
+            "scripts/enable-rdp.cmd",
+            "scripts/enable-winrm.ps1",
+            "scripts/install-vm-tools.cmd"   
+        ]
+    }
+  ],
+  
+  "provisioners": [
+      {
+        "type": "powershell",
+        "scripts": ["scripts/diskmount.ps1"]
+      },
+     {
+        "type": "windows-restart",
+        "restart_timeout": "30m"
+      },
+    {
+      "type": "windows-shell",
+      "inline": ["ipconfig /all"]
+    }
+  ]
+   
+}
+

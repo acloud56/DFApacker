@@ -1,0 +1,18 @@
+{
+    "vsphere_server": "astof-vc02p.dimensional.com",
+    "vsphere_user": "vra__service",
+    "vsphere_password": "{{ env `VCPASS`}}",
+    "vsphere_template_name": "Win2022SQL",
+    "vsphere_folder": "Templates",
+    "vsphere_dc_name": "Austin_PalisadesWest",
+    "vsphere_compute_cluster": "Austin_OF_Development",
+    "vsphere_host": "astof-esxi10.dimensional.com",
+    "vsphere_portgroup_name": "505-Dev_Int_General_1",
+    "vsphere_datastore": "PW_0145_NP_0024",
+    "winadmin_password": "Password1$",
+    "cpu_num": "4",
+    "mem_size": "4096",
+    "disk_size": "102400",
+    "os_iso_path": "[PW_0145_NP_0024] ISO/SW_DVD9_Win_Server_STD_CORE_2022_2108.17_64Bit_English_DC_STD_MLF_X23-35659.ISO",
+    "vmtools_iso_path":"[PW_0145_NP_0024] ISO/windows.iso"
+}
