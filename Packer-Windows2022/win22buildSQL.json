@@ -51,6 +51,11 @@
         "scripts": ["setup/moveCDrom.ps1"]
       },
     {
+        "type": "file",
+        "source": "setup/sqlmounts.ps1",
+        "destination": "C:\\temp"
+      },
+    {
       "inline": [
         "dir c:\\"
       ],
