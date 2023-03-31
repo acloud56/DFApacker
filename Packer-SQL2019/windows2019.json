@@ -31,13 +31,7 @@
   
         "storage": [{
                 "disk_size": "61440",
-                "disk_thin_provisioned":true},
-                        {
-                "disk_size": 40960,
-                "disk_thin_provisioned":true}, 
-                        {
-                 "disk_size": 20480,
-                 "disk_thin_provisioned":true}],
+                "disk_thin_provisioned":true}],
         "disk_controller_type": "lsilogic-sas",
           
         "network_adapters": [
@@ -68,18 +62,6 @@
       {
         "type": "powershell",
         "scripts": ["scripts/diskmount.ps1"]
-        
-      },
-    {
-        "type": "powershell",
-        "elevated_user": "Administrator",
-        "elevated_password": "{{user `winadmin-password`}}",
-        "scripts": ["scripts/dscmodules.ps1"]
-        
-      },
-    {
-        "type": "powershell",
-        "scripts": ["scripts/hardeningscript.ps1"]
         
       },
     {
