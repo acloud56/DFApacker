@@ -67,7 +67,7 @@
   "provisioners": [
       {
         "type": "powershell",
-        "scripts": ["scripts/diskmount.ps1"]
+        "scripts": ["scripts/moveCDrom.ps1"]
         
       },
   
