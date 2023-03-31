@@ -31,34 +31,7 @@
   
         "storage": [{
                 "disk_size": "61440",
-                "disk_thin_provisioned":true},
-                        {
-                "disk_size": 40960,
-                "disk_thin_provisioned":true}, 
-                        {
-                 "disk_size": 30720,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 1024,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 1024,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 1024,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 51200,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 40960,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 20480,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 102400,
-                 "disk_thin_provisioned":true}],
+                "disk_thin_provisioned":true}],
         "disk_controller_type": "lsilogic-sas",
           
         "network_adapters": [
@@ -89,10 +62,6 @@
       {
         "type": "powershell",
         "scripts": ["scripts/diskmount.ps1"]
-      },
-    {
-        "type": "powershell",
-        "scripts": ["scripts/hardeningscript.ps1"]
       },
     {
       "type": "windows-shell",
