@@ -70,18 +70,7 @@
         "scripts": ["scripts/diskmount.ps1"]
         
       },
-    {
-        "type": "powershell",
-        "elevated_user": "Administrator",
-        "elevated_password": "{{user `winadmin-password`}}",
-        "scripts": ["scripts/dscmodules.ps1"]
-        
-      },
-    {
-        "type": "powershell",
-        "scripts": ["scripts/hardeningscript.ps1"]
-        
-      },
+  
     {
       "type": "windows-shell",
       "inline": ["ipconfig /all"]
