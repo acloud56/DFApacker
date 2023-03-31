@@ -36,28 +36,7 @@
                 "disk_size": 40960,
                 "disk_thin_provisioned":true}, 
                         {
-                 "disk_size": 30720,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 1024,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 1024,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 1024,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 51200,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 40960,
-                 "disk_thin_provisioned":true},
-                        {
                  "disk_size": 20480,
-                 "disk_thin_provisioned":true},
-                        {
-                 "disk_size": 102400,
                  "disk_thin_provisioned":true}],
         "disk_controller_type": "lsilogic-sas",
           
@@ -88,12 +67,10 @@
   "provisioners": [
       {
         "type": "powershell",
-        "scripts": ["scripts/diskmount.ps1"]
+        "scripts": ["scripts/moveCDrom.ps1"]
+        
       },
-    {
-        "type": "powershell",
-        "scripts": ["scripts/hardeningscript.ps1"]
-      },
+  
     {
       "type": "windows-shell",
       "inline": ["ipconfig /all"]
