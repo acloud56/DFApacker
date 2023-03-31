@@ -1,0 +1,91 @@
+{
+  "builders": [
+    {
+        "type": "vsphere-iso",
+  
+        "vcenter_server": "{{user `vsphere-server`}}",
+        "username": "{{user `vsphere-user`}}",
+        "password": "{{user `vsphere-password`}}",
+        "insecure_connection": "true",
+  
+        "cluster": "{{user `vsphere-cluster`}}",
+        "datastore": "{{user `vsphere-datastore`}}",
+        "folder": "{{user `vsphere-folder`}}",
+        "datacenter": "{{user `datacenter`}}",
+  
+        "communicator": "winrm",
+        "winrm_username": "Administrator",
+        "winrm_password": "{{user `winadmin-password`}}",
+        "winrm_timeout": "5m",
+  
+        "convert_to_template": "true",
+
+        "vm_name": "{{user `vm-name`}}-{{user `buildtime`}}",
+        "guest_os_type": "windows9Server64Guest",
+        "remove_cdrom": "true",
+  
+        "CPUs": "{{user `vm-cpu-num`}}",
+        "RAM": "{{user `vm-mem-size`}}",
+        "RAM_reserve_all": true,
+        "firmware": "bios",
+  
+        "storage": [{
+                "disk_size": "61440",
+                "disk_thin_provisioned":true},
+                        {
+                "disk_size": 40960,
+                "disk_thin_provisioned":true}, 
+                        {
+                 "disk_size": 20480,
+                 "disk_thin_provisioned":true}],
+        "disk_controller_type": "lsilogic-sas",
+          
+        "network_adapters": [
+          {
+            "network": "{{user `vsphere-network`}}",
+            "network_card": "vmxnet3"
+          }
+        ],
+
+        "shutdown_command": "shutdown /s /t 5",
+  
+        "iso_paths": [
+          "{{user `os_iso_path`}}",
+          "[] /vmimages/tools-isoimages/windows.iso"
+        ],
+  
+        "floppy_files": [
+            "autounattend.xml",
+            "scripts/disable-network-discovery.cmd",
+            "scripts/enable-rdp.cmd",
+            "scripts/enable-winrm.ps1",
+            "scripts/install-vm-tools.cmd"   
+        ]
+    }
+  ],
+  
+  "provisioners": [
+      {
+        "type": "powershell",
+        "scripts": ["scripts/diskmount.ps1"]
+        
+      },
+    {
+        "type": "powershell",
+        "elevated_user": "Administrator",
+        "elevated_password": "{{user `winadmin-password`}}",
+        "scripts": ["scripts/dscmodules.ps1"]
+        
+      },
+    {
+        "type": "powershell",
+        "scripts": ["scripts/hardeningscript.ps1"]
+        
+      },
+    {
+      "type": "windows-shell",
+      "inline": ["ipconfig /all"]
+    }
+  ]
+   
+}
