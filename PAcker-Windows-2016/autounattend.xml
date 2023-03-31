@@ -74,7 +74,7 @@
                 </ProductKey>
                 <AcceptEula>true</AcceptEula>
                 <FullName>Packer</FullName>
-                <Organization>Packer</Organization>
+                <Organization>Dimensional</Organization>
             </UserData>
         </component>
     </settings>
@@ -115,7 +115,7 @@
         <!-- https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup -->
             <AutoLogon>
                 <Password>
-                    <Value>packer</Value>
+                    <Value>>S3cr3t0!</Value>
                     <PlainText>true</PlainText>
                 </Password>
                 <Enabled>true</Enabled>
@@ -190,7 +190,7 @@
             </OOBE>
             <UserAccounts>
                 <AdministratorPassword>
-                    <Value>packer</Value>
+                    <Value>>S3cr3t0!</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
             </UserAccounts>
