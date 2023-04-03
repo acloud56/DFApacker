@@ -20,7 +20,7 @@
   
         "convert_to_template": "true",
 
-        "vm_name": "{{user `vm-name`}}-{{user `buildtime`}}",
+        "vm_name": "{{user `vm-name`}}-SQL",
         "guest_os_type": "windows9Server64Guest",
         "remove_cdrom": "true",
   
