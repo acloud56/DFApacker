@@ -58,22 +58,22 @@
     {
         "type": "file",
         "source": "PSModules/Microsoft.PowerShell.SecretManagement",
-        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules\\Microsoft.PowerShell.SecretManagement"
+        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
       },
     {
         "type": "file",
         "source": "PSModules/SecretManagement.KeePass",
-        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules\\SecretManagement.KeePass"
+        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
       },
     {
         "type": "file",
         "source": "PSModules/PSFramework",
-        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules\\PSFramework"
+        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
       },
     {
         "type": "file",
         "source": "PSModules/dbatools",
-        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules\\dbatools"
+        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
       },
     {
       "inline": [
