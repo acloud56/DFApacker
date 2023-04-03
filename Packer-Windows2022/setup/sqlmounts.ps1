@@ -1,7 +1,7 @@
-﻿$label = "Data,Mounts,system_data1,system_log1,data_data1,data_data2,data_data3,data_data4,log_log1,temp_data1,temp_data2,temp_data3,temp_data4,temp_data5,temp_data6,temp_data7,temp_data8,temp_log1"
+﻿$label = "Data,Mounts,system_data1,system_log1,data_data1,data_data2,data_data3,data_data4,log_log1,temp_data1,temp_data2,temp_data3,temp_data4,temp_data5,temp_data6,temp_data7,temp_data8,temp_log1,page"
 ### Stops the Hardware Detection Service ###
 
-$mounts = "D,M,system_data1,system_log1,data_data1,data_data2,data_data3,data_data4,log_log1,temp_data1,temp_data2,temp_data3,temp_data4,temp_data5,temp_data6,temp_data7,temp_data8,temp_log1"
+$mounts = "D,M,system_data1,system_log1,data_data1,data_data2,data_data3,data_data4,log_log1,temp_data1,temp_data2,temp_data3,temp_data4,temp_data5,temp_data6,temp_data7,temp_data8,temp_log1,page"
 Stop-Service -Name ShellHWDetection
  
 ### Take all the new RAW disks into a variable ###
@@ -62,6 +62,7 @@ foreach ($d in $disks){
     if ($mountpoint -eq "temp_data7") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data7"}
     if ($mountpoint -eq "temp_data8") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data8"}
     if ($mountpoint -eq "temp_log1") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Log1"}
+    if ($mountpoint -eq "page") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Page\Page"}
 
     $drive= Get-Partition –Disknumber $d.Number –PartitionNumber 2 | Format-Volume –FileSystem NTFS –NewFileSystemLabel $mountpoint -AllocationUnitSize 65536 –Confirm:$false
      }
@@ -84,6 +85,7 @@ foreach ($d in $disks){
     if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data7' -ItemType Directory}
     if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data8' -ItemType Directory}
     if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Log1' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Page\Page' -ItemType Directory}
     
    
 
