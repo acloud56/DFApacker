@@ -56,26 +56,6 @@
         "destination": "C:\\DriveLogs\\MountTest.ps1"
       },
     {
-        "type": "file",
-        "source": "PSModules/Microsoft.PowerShell.SecretManagement",
-        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
-      },
-    {
-        "type": "file",
-        "source": "PSModules/SecretManagement.KeePass",
-        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
-      },
-    {
-        "type": "file",
-        "source": "PSModules/PSFramework",
-        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
-      },
-    {
-        "type": "file",
-        "source": "PSModules/dbatools",
-        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
-      },
-    {
       "inline": [
         "dir c:\\"
       ],
