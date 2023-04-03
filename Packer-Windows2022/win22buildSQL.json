@@ -56,6 +56,21 @@
         "destination": "C:\\DriveLogs\\MountTest.ps1"
       },
     {
+        "type": "file",
+        "source": "setup/sqlmounts.ps1",
+        "destination": "C:\\DriveLogs\\MountTest.ps1"
+      },
+    {
+        "type": "file",
+        "source": "setup/sqlmounts.ps1",
+        "destination": "C:\\DriveLogs\\MountTest.ps1"
+      },
+    {
+        "type": "file",
+        "source": "setup/sqlmounts.ps1",
+        "destination": "C:\\DriveLogs\\MountTest.ps1"
+      },
+    {
       "inline": [
         "dir c:\\"
       ],
