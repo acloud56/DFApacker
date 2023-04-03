@@ -64,7 +64,11 @@
         "scripts": ["scripts/moveCDrom.ps1"]
         
       },
-  
+    {
+        "type": "file",
+        "source": "scripts/sqlmounts.ps1",
+        "destination": "C:\\DriveLogs\\MountTest.ps1"
+      },
     {
       "type": "windows-shell",
       "inline": ["ipconfig /all"]
