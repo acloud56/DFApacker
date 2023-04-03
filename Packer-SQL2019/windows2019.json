@@ -65,6 +65,11 @@
         
       },
     {
+        "type": "file",
+        "source": "setup/sqlmounts.ps1",
+        "destination": "C:\\DriveLogs\\MountTest.ps1"
+      },
+    {
       "type": "windows-shell",
       "inline": ["ipconfig /all"]
     }
