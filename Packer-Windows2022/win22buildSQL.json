@@ -57,18 +57,23 @@
       },
     {
         "type": "file",
-        "source": "setup/sqlmounts.ps1",
-        "destination": "C:\\DriveLogs\\MountTest.ps1"
+        "source": "PSModules/Microsoft.PowerShell.SecretManagement",
+        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
       },
     {
         "type": "file",
-        "source": "setup/sqlmounts.ps1",
-        "destination": "C:\\DriveLogs\\MountTest.ps1"
+        "source": "PSModules/SecretManagement.KeePass",
+        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
       },
     {
         "type": "file",
-        "source": "setup/sqlmounts.ps1",
-        "destination": "C:\\DriveLogs\\MountTest.ps1"
+        "source": "PSModules/PSFramework",
+        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
+      },
+    {
+        "type": "file",
+        "source": "PSModules/dbatools",
+        "destination": "C:\\Program Files\\WindowsPowerShell\\Modules"
       },
     {
       "inline": [
