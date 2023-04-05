@@ -145,7 +145,7 @@
             </OOBE>
             <UserAccounts>
                 <AdministratorPassword>
-                    <Value>VMware1!</Value>
+                    <Value>S3cr3t0!</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
             </UserAccounts>
