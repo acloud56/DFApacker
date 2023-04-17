@@ -46,25 +46,25 @@ foreach ($d in $disks){
     $drive=Format-Volume -driveletter $dl.Driveletter -FileSystem NTFS -NewFileSystemLabel $driveLabel -Confirm:$false
     }
      else {
-    if ($mountpoint -eq "system_data01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\System\Data01"}
-    if ($mountpoint -eq "system_log01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\System\Log01"}
-    if ($mountpoint -eq "data_data01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data01"}
-    if ($mountpoint -eq "data_data02") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data02"}
-    if ($mountpoint -eq "data_data03") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data03"}
-    if ($mountpoint -eq "data_data04") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data04"}
-    if ($mountpoint -eq "log_log01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Log\Log01"}
-    if ($mountpoint -eq "temp_data01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data01"}
-    if ($mountpoint -eq "temp_data02") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data02"}
-    if ($mountpoint -eq "temp_data03") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data03"}
-    if ($mountpoint -eq "temp_data04") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data04"}
-    if ($mountpoint -eq "temp_data05") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data05"}
-    if ($mountpoint -eq "temp_data06") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data06"}
-    if ($mountpoint -eq "temp_data07") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data07"}
-    if ($mountpoint -eq "temp_data08") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data08"}
-    if ($mountpoint -eq "temp_log01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Log01"}
-    if ($mountpoint -eq "page01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Page\Page01"}
+    if ($mountpoint -eq "system_data01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\System\Data01"}
+    if ($mountpoint -eq "system_log01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\System\Log01"}
+    if ($mountpoint -eq "data_data01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Data\Data01"}
+    if ($mountpoint -eq "data_data02") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Data\Data02"}
+    if ($mountpoint -eq "data_data03") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Data\Data03"}
+    if ($mountpoint -eq "data_data04") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Data\Data04"}
+    if ($mountpoint -eq "log_log01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Log\Log01"}
+    if ($mountpoint -eq "temp_data01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Temp\Data01"}
+    if ($mountpoint -eq "temp_data02") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Temp\Data02"}
+    if ($mountpoint -eq "temp_data03") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Temp\Data03"}
+    if ($mountpoint -eq "temp_data04") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Temp\Data04"}
+    if ($mountpoint -eq "temp_data05") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Temp\Data05"}
+    if ($mountpoint -eq "temp_data06") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Temp\Data06"}
+    if ($mountpoint -eq "temp_data07") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Temp\Data07"}
+    if ($mountpoint -eq "temp_data08") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Temp\Data08"}
+    if ($mountpoint -eq "temp_log01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Temp\Log01"}
+    if ($mountpoint -eq "page01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 “AccessPath "M:\Page\Page01"}
 
-    $drive= Get-Partition –Disknumber $d.Number –PartitionNumber 2 | Format-Volume –FileSystem NTFS –NewFileSystemLabel $mountpoint -AllocationUnitSize 65536 –Confirm:$false
+    $drive= Get-Partition â€“Disknumber $d.Number â€“PartitionNumber 2 | Format-Volume â€“FileSystem NTFS â€“NewFileSystemLabel $mountpoint -AllocationUnitSize 65536 â€“Confirm:$false
      }
     ### 25 Second pause between each disk ###
     Start-Sleep 25
@@ -93,6 +93,8 @@ if ($mountsArr[$diskIndex].length -eq 1){
     $driveletter=$drive.DriveLetter+':'
     icacls "$driveletter" /remove "everyone"
 }
+}
+
     $diskIndex = $diskIndex + 1
 
     
