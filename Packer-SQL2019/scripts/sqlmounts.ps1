@@ -97,7 +97,7 @@ if ($mountsArr[$diskIndex].length -eq 1){
 
     
 }
-
+}
 ### Starts the Hardware Detection Service again ###
 Start-Service -Name ShellHWDetection
 ### end of script ###
