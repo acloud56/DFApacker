@@ -1,7 +1,7 @@
-﻿$label = "Data,Mounts,system_data1,system_log1,data_data1,data_data2,data_data3,data_data4,log_log1,temp_data1,temp_data2,temp_data3,temp_data4,temp_data5,temp_data6,temp_data7,temp_data8,temp_log1,page"
+﻿$label = "Data,Mounts,system_data01,system_log01,data_data01,data_data02,data_data03,data_data04,log_log01,temp_data01,temp_data02,temp_data03,temp_data04,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,page01"
 ### Stops the Hardware Detection Service ###
 
-$mounts = "D,M,system_data1,system_log1,data_data1,data_data2,data_data3,data_data4,log_log1,temp_data1,temp_data2,temp_data3,temp_data4,temp_data5,temp_data6,temp_data7,temp_data8,temp_log1,page"
+$mounts = "D,M,system_data01,system_log01,data_data01,data_data02,data_data03,data_data04,log_log01,temp_data01,temp_data02,temp_data03,temp_data04,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,page01"
 Stop-Service -Name ShellHWDetection
  
 ### Take all the new RAW disks into a variable ###
@@ -46,46 +46,47 @@ foreach ($d in $disks){
     $drive=Format-Volume -driveletter $dl.Driveletter -FileSystem NTFS -NewFileSystemLabel $driveLabel -Confirm:$false
     }
      else {
-    if ($mountpoint -eq "system_data1") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\System\Data1"}
-    if ($mountpoint -eq "system_log1") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\System\Log1"}
-    if ($mountpoint -eq "data_data1") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data1"}
-    if ($mountpoint -eq "data_data2") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data2"}
-    if ($mountpoint -eq "data_data3") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data3"}
-    if ($mountpoint -eq "data_data4") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data4"}
-    if ($mountpoint -eq "log_log1") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Log\Log1"}
-    if ($mountpoint -eq "temp_data1") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data1"}
-    if ($mountpoint -eq "temp_data2") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data2"}
-    if ($mountpoint -eq "temp_data3") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data3"}
-    if ($mountpoint -eq "temp_data4") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data4"}
-    if ($mountpoint -eq "temp_data5") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data5"}
-    if ($mountpoint -eq "temp_data6") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data6"}
-    if ($mountpoint -eq "temp_data7") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data7"}
-    if ($mountpoint -eq "temp_data8") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data8"}
-    if ($mountpoint -eq "temp_log1") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Log1"}
-    if ($mountpoint -eq "page") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Page\Page"}
+    if ($mountpoint -eq "system_data01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\System\Data01"}
+    if ($mountpoint -eq "system_log01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\System\Log01"}
+    if ($mountpoint -eq "data_data01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data01"}
+    if ($mountpoint -eq "data_data02") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data02"}
+    if ($mountpoint -eq "data_data03") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data03"}
+    if ($mountpoint -eq "data_data04") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Data\Data04"}
+    if ($mountpoint -eq "log_log01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Log\Log01"}
+    if ($mountpoint -eq "temp_data01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data01"}
+    if ($mountpoint -eq "temp_data02") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data02"}
+    if ($mountpoint -eq "temp_data03") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data03"}
+    if ($mountpoint -eq "temp_data04") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data04"}
+    if ($mountpoint -eq "temp_data05") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data05"}
+    if ($mountpoint -eq "temp_data06") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data06"}
+    if ($mountpoint -eq "temp_data07") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data07"}
+    if ($mountpoint -eq "temp_data08") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Data08"}
+    if ($mountpoint -eq "temp_log01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Temp\Log01"}
+    if ($mountpoint -eq "page01") {Add-PartitionAccessPath -DiskNumber $d.Number -PartitionNumber 2 –AccessPath "M:\Page\Page01"}
+    
 
     $drive= Get-Partition –Disknumber $d.Number –PartitionNumber 2 | Format-Volume –FileSystem NTFS –NewFileSystemLabel $mountpoint -AllocationUnitSize 65536 –Confirm:$false
      }
     ### 25 Second pause between each disk ###
     Start-Sleep 25
     
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\System\Data1' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\System\Log1' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data1' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data2' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data3' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data4' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Log\Log1' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data1' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data2' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data3' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data4' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data5' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data6' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data7' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data8' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Log1' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Page\Page' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\System\Data01' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\System\Log01' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data01' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data02' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data03' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data04' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Log\Log01' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data01' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data02' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data03' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data04' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data05' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data06' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data07' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data08' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Log01' -ItemType Directory}
+    if ($driveLetter -eq "M") {New-Item -Path 'M:\Page\Page01' -ItemType Directory}
     
    
 
