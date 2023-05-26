@@ -9,7 +9,7 @@
       "convert_to_template": "true",
       "datacenter": "{{user `vsphere_dc_name`}}",
       "datastore": "{{user `vsphere_datastore`}}",
-      "disk_controller_type": "lsilogic-sas",
+      "disk_controller_type": ["lsilogic-sas","pvscsi","pvscsi","pvscsi"]
       "firmware": "bios",
       "floppy_files": [
         "setup/win22/autounattend.xml",
