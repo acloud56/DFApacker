@@ -32,7 +32,7 @@
         "storage": [{
                 "disk_size": "61440",
                 "disk_thin_provisioned":true}],
-        "disk_controller_type": "lsilogic-sas",
+        "disk_controller_type": ["lsilogic-sas","pvscsi","pvscsi","pvscsi"],
           
         "network_adapters": [
           {
