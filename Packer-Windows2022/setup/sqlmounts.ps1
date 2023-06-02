@@ -1,8 +1,31 @@
-﻿﻿$label = "system_data01,data_data01,data_data02,data_data03,data_data04,temp_data01,temp_data02,temp_data03,temp_data04,Data,Mounts,page01,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,system_log01,log_log01"
+﻿﻿ $label = "system_data01,data_data01,data_data02,data_data03,data_data04,temp_data01,temp_data02,temp_data03,temp_data04,Data,page01,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,system_log01,log_log01"
 ### Stops the Hardware Detection Service ###
 
-$mounts = "system_data01,data_data01,data_data02,data_data03,data_data04,temp_data01,temp_data02,temp_data03,temp_data04,D,M,page01,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,system_log01,log_log01"
+$mounts = "system_data01,data_data01,data_data02,data_data03,data_data04,temp_data01,temp_data02,temp_data03,temp_data04,D,page01,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,system_log01,log_log01"
 Stop-Service -Name ShellHWDetection
+
+Write-Output -InputObject "Assigning drive letter M to disk"
+$dl = get-Disk 2 | Initialize-Disk -PartitionStyle MBR -PassThru | New-Partition -DriveLetter 'M' -UseMaximumSize
+$drive=Format-Volume -driveletter M -FileSystem NTFS -NewFileSystemLabel $driveLabel -Confirm:$false
+
+New-Item -Path 'M:\System\Data01' -ItemType Directory
+New-Item -Path 'M:\System\Log01' -ItemType Directory
+New-Item -Path 'M:\Data\Data01' -ItemType Directory
+New-Item -Path 'M:\Data\Data02' -ItemType Directory
+New-Item -Path 'M:\Data\Data03' -ItemType Directory
+New-Item -Path 'M:\Data\Data04' -ItemType Directory
+New-Item -Path 'M:\Log\Log01' -ItemType Directory
+New-Item -Path 'M:\Temp\Data01' -ItemType Directory
+New-Item -Path 'M:\Temp\Data02' -ItemType Directory
+New-Item -Path 'M:\Temp\Data03' -ItemType Directory
+New-Item -Path 'M:\Temp\Data04' -ItemType Directory
+New-Item -Path 'M:\Temp\Data05' -ItemType Directory
+New-Item -Path 'M:\Temp\Data06' -ItemType Directory
+New-Item -Path 'M:\Temp\Data07' -ItemType Directory
+New-Item -Path 'M:\Temp\Data08' -ItemType Directory
+New-Item -Path 'M:\Temp\Log01' -ItemType Directory
+New-Item -Path 'M:\Page\Page01' -ItemType Directory
+
  
 ### Take all the new RAW disks into a variable ###
 $disks = get-disk | Where-Object partitionstyle -eq "raw"
@@ -70,23 +93,7 @@ foreach ($d in $disks){
     ### 25 Second pause between each disk ###
     Start-Sleep 25
     
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\System\Data01' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\System\Log01' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data01' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data02' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data03' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Data\Data04' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Log\Log01' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data01' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data02' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data03' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data04' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data05' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data06' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data07' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Data08' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Temp\Log01' -ItemType Directory}
-    if ($driveLetter -eq "M") {New-Item -Path 'M:\Page\Page01' -ItemType Directory}
+    
     
    
 
