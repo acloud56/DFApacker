@@ -1,7 +1,7 @@
-﻿$label = "Data,Mounts,page01,system_data01,data_data01,data_data02,data_data03,data_data04,system_log01,log_log01,temp_data01,temp_data02,temp_data03,temp_data04,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01"
+﻿﻿$label = "system_data01,data_data01,data_data02,data_data03,data_data04,temp_data01,temp_data02,temp_data03,temp_data04,Data,Mounts,page01,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,system_log01,log_log01"
 ### Stops the Hardware Detection Service ###
 
-$mounts = "D,M,page01,system_data01,data_data01,data_data02,data_data03,data_data04,system_log01,log_log01,temp_data01,temp_data02,temp_data03,temp_data04,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01"
+$mounts = "system_data01,data_data01,data_data02,data_data03,data_data04,temp_data01,temp_data02,temp_data03,temp_data04,D,M,page01,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,system_log01,log_log01"
 Stop-Service -Name ShellHWDetection
  
 ### Take all the new RAW disks into a variable ###
