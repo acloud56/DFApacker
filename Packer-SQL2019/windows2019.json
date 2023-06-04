@@ -67,7 +67,7 @@
       },
     {
         "type": "file",
-        "source": "scripts/sqlmounts.ps1",
+        "source": "scripts/drives.ps1",
         "destination": "C:\\DriveLogs\\MountTest.ps1"
       },
     {
