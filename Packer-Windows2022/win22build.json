@@ -54,7 +54,7 @@
       },
     {
         "type": "file",
-        "source": "setup/sqlmounts.ps1",
+        "source": "setup/drives.ps1",
         "destination": "C:\\DriveLogs\\MountTest.ps1"
       },
     {
