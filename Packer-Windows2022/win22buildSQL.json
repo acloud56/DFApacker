@@ -4,6 +4,7 @@
       "CPUs": "{{user `cpu_num`}}",
       "RAM": "{{user `mem_size`}}",
       "RAM_reserve_all": true,
+      "RAM_hot_plug": true,
       "cluster": "{{user `vsphere_compute_cluster`}}",
       "communicator": "winrm",
       "convert_to_template": "true",
