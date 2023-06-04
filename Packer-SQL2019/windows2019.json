@@ -26,6 +26,7 @@
   
         "CPUs": "{{user `vm-cpu-num`}}",
         "RAM": "{{user `vm-mem-size`}}",
+        "RAM_hot_plug": true,
         "RAM_reserve_all": true,
         "firmware": "bios",
   
