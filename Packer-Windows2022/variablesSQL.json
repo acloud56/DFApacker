@@ -6,7 +6,7 @@
     "vsphere_folder": "Templates",
     "vsphere_dc_name": "Austin_PalisadesWest",
     "vsphere_compute_cluster": "Austin_OF_Development",
-    "vsphere_host": "astof-esxi10.dimensional.com",
+    "vsphere_host": "astof-esxi13.dimensional.com",
     "vsphere_portgroup_name": "505-Dev_Int_General_1",
     "vsphere_datastore": "PW_0145_NP_0024",
     "winadmin_password": "Password1$",
