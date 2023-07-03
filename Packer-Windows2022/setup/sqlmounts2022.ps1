@@ -1,7 +1,7 @@
-﻿$label = "Data,system_data01,system_log01,data_data01,data_data02,data_data03,data_data04,log_log01,temp_data01,temp_data02,temp_data03,temp_data04,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,page01"
+﻿$label = "system_log01,log_log01,Data,page01,temp_data01,temp_data02,temp_data03,temp_data04,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,system_data01,data_data01,data_data02,data_data03,data_data04"
 ### Stops the Hardware Detection Service ###
 
-$mounts = "D,system_data01,system_log01,data_data01,data_data02,data_data03,data_data04,log_log01,temp_data01,temp_data02,temp_data03,temp_data04,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,page01"
+$mounts = "system_log01,log_log01,D,page01,temp_data01,temp_data02,temp_data03,temp_data04,temp_data05,temp_data06,temp_data07,temp_data08,temp_log01,system_data01,data_data01,data_data02,data_data03,data_data04"
 Stop-Service -Name ShellHWDetection
 
 Write-Output -InputObject "Assigning drive letter M to disk"
