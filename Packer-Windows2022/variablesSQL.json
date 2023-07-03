@@ -2,7 +2,7 @@
     "vsphere_server": "astof-vc02p.dimensional.com",
     "vsphere_user": "vra__service",
     "vsphere_password": "{{ env `VCPASS`}}",
-    "vsphere_template_name": "Win2022SQLv2",
+    "vsphere_template_name": "Win2022SQLv3",
     "vsphere_folder": "Templates",
     "vsphere_dc_name": "Austin_PalisadesWest",
     "vsphere_compute_cluster": "Austin_OF_Development",
